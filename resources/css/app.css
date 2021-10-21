@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    body{
+        background-color: #7cc045;
+    }
+}
+
+@layer components {
+    .hero {
+        background-image: url("img/bg.gif");
+        background-repeat: repeat-x;
+        animation: marquee 50s infinite linear;
+    }
+}
+
+@layer utilities {
+    .outlined {
+        text-shadow:
+            -2px -2px 0 #fff,
+            0   -2px 0 #fff,
+            2px -2px 0 #fff,
+            2px  0   0 #fff,
+            2px  2px 0 #fff,
+            0    2px 0 #fff,
+            -2px  2px 0 #fff,
+            -2px  0   0 #fff;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        background-position: bottom -138px left 0;
+    }
+    100% {
+        background-position: bottom -138px left -636px;
+    }
+}
