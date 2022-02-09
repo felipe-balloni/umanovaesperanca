@@ -9,6 +9,13 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
     theme: {
+        container: {
+            center: true,
+            padding: {
+                DEFAULT: '1rem',
+                lg: '2rem',
+            },
+        },
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
@@ -16,7 +23,12 @@ module.exports = {
             },
             colors: {
                 sky: colors.sky,
+                orange: colors.orange,
                 'top': '#aadbe4',
+                'footer': '#008a53',
+            },
+            backgroundSize: {
+                '50%': '50%',
             },
         },
     },
@@ -26,5 +38,8 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/aspect-ratio'),
+    ],
 };

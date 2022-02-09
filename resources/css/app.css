@@ -12,9 +12,30 @@
 
 @layer components {
     .hero {
-        background-image: url("img/bg.gif");
+        background-image: url("/img/bg.gif");
+        background-size: 16rem;
+        background-position-y: 0.5rem;
         background-repeat: repeat-x;
-        animation: marquee 50s infinite linear;
+    }
+    @media (min-width: 640px) {
+        .hero {
+            background-size: 30rem;
+            background-position-y: 0rem;
+            animation: marquee 50s infinite linear;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            background-size: auto;
+            background-position-y: 0rem;
+            animation: marquee 70s infinite linear;
+        }
+    }
+
+    .carousel {
+        @apply h-52 w-96 sm:h-80 sm:w-[30rem] md:h-[24rem] md:w-[36rem] lg:h-[480px] lg:w-[750px];
+        /*h-52 w-96 sm:h-96 sm:w-[38rem] lg:h-[480px] lg:w-[750px]*/
     }
 }
 
@@ -34,9 +55,9 @@
 
 @keyframes marquee {
     0% {
-        background-position: bottom -138px left 0;
+        background-position-x: 0;
     }
     100% {
-        background-position: bottom -138px left -636px;
+        background-position-x: -636px;
     }
 }
